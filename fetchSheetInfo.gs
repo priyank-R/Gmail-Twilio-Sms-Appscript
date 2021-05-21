@@ -1,6 +1,7 @@
 function fetchSheetInfo() {
-    var ss = SpreadsheetApp.openById('1VGqI3K0iAAYjE8BlAPMGWkUox8kv1NQOOKQUtNsu_dQ');
-    const activeSheet = ss.getSheetByName('active')
+    var ss = SpreadsheetApp.getActiveSpreadsheet()
+    const sheets = ss.getSheets()
+    const activeSheet = sheets[0]
     const cells = activeSheet.getRange(1, 2, 7)
     const regex = new RegExp(/"/, 'g')
 
